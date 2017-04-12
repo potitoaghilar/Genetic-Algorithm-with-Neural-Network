@@ -13,7 +13,6 @@ namespace GeneticAlgorithm
         sbyte[][] genomes;
         NeuroNetwork[] brains;
         double[] fitness;
-        const int solution_selection_for_crossover = 2; // Not edit
 
         // NeuroNetwork params
         private int neuro_input_nodes, neuro_output_nodes;
@@ -69,7 +68,7 @@ namespace GeneticAlgorithm
             Dictionary<sbyte[], double> genomes_dictionary = new Dictionary<sbyte[], double>();
             for (int i = 0; i < genomes_count; i++)
                 genomes_dictionary.Add(genomes[i], fitness[i]);
-            genomes_dictionary = genomes_dictionary.OrderByDescending(key => key.Value).Take(solution_selection_for_crossover).ToDictionary(pair => pair.Key, pair => pair.Value);
+            genomes_dictionary = genomes_dictionary.OrderByDescending(key => key.Value).Take(2).ToDictionary(pair => pair.Key, pair => pair.Value);
 
             // Create new genomes array
             sbyte[][] newGenomes = new sbyte[genomes_count][];
