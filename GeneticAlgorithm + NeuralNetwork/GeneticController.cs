@@ -108,7 +108,7 @@ namespace GeneticAlgorithm
                 }
 
                 // Apply some mutations
-                mutationProb = 1 / (fitness.Max() * 2);
+                mutationProb = 1 / fitness.Max();
                 if (mutationProb > .2) mutationProb = .2;
                 if (takeFirstGenome) newGenome[i] = random.NextDouble() < mutationProb ? (sbyte)random.Next(-128, 128) : genome1[i];
                 else newGenome[i] = random.NextDouble() < mutationProb ? (sbyte)random.Next(-128, 127) : genome2[i];
