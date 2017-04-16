@@ -39,7 +39,7 @@ namespace Agent
     {
         static void Main(String[] args)
         {
-            double[] input_vals = new double[] { 0, 1, .1, .9, 0, 0, 0, .1, 1 };
+            double[] input_vals = new double[] { 0, 1, .1, .9, 0, 0, 0, .1, 1, 0, 0, 1, .1, .9, 0, 0, 0, .1, 1, 0, 0, 1, .1, .9, 0, 0, 0, .1, 1, 0, 0, 1, .1, .9, 0, 0, 0, .1, 1, 0, 0, 1, .1, .9, 0, 0, 0, .1, 1, 0 };
 
             int input_length = input_vals.Length, output_legth = 1;
             int[] hiddenNeurons = new int[] { 16, 16 };

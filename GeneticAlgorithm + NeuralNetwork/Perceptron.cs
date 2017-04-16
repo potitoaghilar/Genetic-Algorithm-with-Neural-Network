@@ -34,10 +34,7 @@ namespace GeneticAlgorithm
             double result = 0;
             for (int i = 0; i < vector1.Length; i++)
             {
-                for (int o = 0; o < vector2.Length; o++)
-                {
-                    result += vector1[i] * vector2[o];
-                }
+                result += vector1[i] * vector2[i];
             }
             return result;
         }

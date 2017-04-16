@@ -5,7 +5,7 @@ namespace GeneticAlgorithm
     // Considering the output layer as the result of last layer of HLs
     public class NeuroNetwork
     {
-        
+
         // Network params
         private int input_nodes, output_nodes, hidden_layers_count;
         private int[] neurons_per_layer;
@@ -43,16 +43,13 @@ namespace GeneticAlgorithm
                 int input_length;
                 if (currLayer == 0) input_length = input_nodes;
                 else input_length = neurons_per_layer[currLayer - 1];
-                
+
                 // Set perceptron weights and bias
                 sbyte[] weights = new sbyte[input_length];
-                
+
                 for (int w = 0; w < weights.Length; w++)
                     weights[w] = genome[i++];
-                sbyte bias = genome[i++];
-                if (currLayer == hidden_layers_count - 1)
-                    bias = 0;
-                perceptrons[curr_perceptron_all_layers] = new Perceptron(weights, bias);
+                perceptrons[curr_perceptron_all_layers] = new Perceptron(weights, genome[i++]);
 
                 curr_perceptron_this_layer++;
                 curr_perceptron_all_layers++;

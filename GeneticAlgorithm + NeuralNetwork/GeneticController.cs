@@ -13,11 +13,12 @@ namespace GeneticAlgorithm
         sbyte[][] genomes;
         NeuroNetwork[] brains;
         double[] fitness;
+        public double mutationProb = 0;
 
         // NeuroNetwork params
         private int neuro_input_nodes, neuro_output_nodes;
         private int[] neurons_per_layer;
-        
+
 
         public GeneticController(int genomes_count, int neuro_input_nodes, int[] neurons_per_layer, int neuro_output_nodes)
         {
@@ -86,7 +87,7 @@ namespace GeneticAlgorithm
             sbyte[] newGenome = new sbyte[genome1.Length];
 
             // Set in how many parts the genome should be divided in
-            int parts = random.Next(5, 10);
+            int parts = random.Next(4, 7);
             // Set the splitting points
             int[] splitPoints = new int[parts - 1];
             for (int i = 0; i < splitPoints.Length; i++)
@@ -107,14 +108,14 @@ namespace GeneticAlgorithm
                 }
 
                 // Apply some mutations
-                double mutation_rate = 1 / fitness.Max();
-                if (mutation_rate > .07) mutation_rate = .07;
-                if (takeFirstGenome) newGenome[i] = random.NextDouble() < mutation_rate ? (sbyte)random.Next(-128, 128) : genome1[i];
-                else newGenome[i] = random.NextDouble() < mutation_rate ? (sbyte)random.Next(-128, 127) : genome2[i];
+                mutationProb = 1 / (fitness.Max() * 2);
+                if (mutationProb > .2) mutationProb = .2;
+                if (takeFirstGenome) newGenome[i] = random.NextDouble() < mutationProb ? (sbyte)random.Next(-128, 128) : genome1[i];
+                else newGenome[i] = random.NextDouble() < mutationProb ? (sbyte)random.Next(-128, 127) : genome2[i];
             }
             return newGenome;
         }
-        
+
         public void resetGenerations()
         {
             brains = null;
