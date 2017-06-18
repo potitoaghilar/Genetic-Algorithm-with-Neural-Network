@@ -50,7 +50,8 @@ namespace NeuralNetwork
 
                 for (int w = 0; w < weights.Length; w++)
                     weights[w] = genome[i++];
-                perceptrons[curr_perceptron_all_layers] = new Perceptron(weights, genome[i++]);
+                setPerceptron(curr_perceptron_all_layers, weights, genome[i++]);
+                //perceptrons[curr_perceptron_all_layers] = new Perceptron(weights, genome[i++]); <-- old
 
                 curr_perceptron_this_layer++;
                 curr_perceptron_all_layers++;
@@ -59,6 +60,10 @@ namespace NeuralNetwork
 
         protected virtual void createPerceptrons() {
             perceptrons = new Perceptron[neurons_per_layer.Sum()];
+        }
+
+        protected virtual void setPerceptron(int index, sbyte[] weights, sbyte value) {
+            perceptrons[index] = new Perceptron(weights, value);
         }
 
         // Elaborate input signals through NeuralNetwork

@@ -28,6 +28,11 @@ namespace NeuralNetwork
             return output;
         }
 
+        public void setWeights(double[] weights)
+        {
+            this.weights = weights;
+        }
+
         public double[] getWeights()
         {
             return weights;
