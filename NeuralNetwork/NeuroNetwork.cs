@@ -1,17 +1,18 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
-namespace GeneticAlgorithm
+namespace NeuralNetwork
 {
     // Considering the output layer as the result of last layer of HLs
     public class NeuroNetwork
     {
 
         // Network params
-        private int input_nodes, output_nodes, hidden_layers_count;
-        private int[] neurons_per_layer;
+        protected int input_nodes, output_nodes, hidden_layers_count;
+        protected int[] neurons_per_layer;
 
         // Network structure as array of perceptrons
-        private Perceptron[] perceptrons;
+        protected Perceptron[] perceptrons;
 
         public NeuroNetwork(int input_nodes, int[] neurons_per_layer, int output_nodes, sbyte[] genome)
         {
@@ -25,9 +26,9 @@ namespace GeneticAlgorithm
             createNetwork(genome);
         }
 
-        private void createNetwork(sbyte[] genome)
+        protected void createNetwork(sbyte[] genome)
         {
-            perceptrons = new Perceptron[neurons_per_layer.Sum()];
+            createPerceptrons();
 
             // Indexes
             int currLayer = 0, curr_perceptron_all_layers = 0, curr_perceptron_this_layer = 0;
@@ -56,6 +57,10 @@ namespace GeneticAlgorithm
             }
         }
 
+        protected virtual void createPerceptrons() {
+            perceptrons = new Perceptron[neurons_per_layer.Sum()];
+        }
+
         // Elaborate input signals through NeuralNetwork
         public double[] elaborate(double[] datas)
         {
@@ -80,10 +85,11 @@ namespace GeneticAlgorithm
                 result[i] = perceptrons[p_index - i - 1].getOutput();
             }
             return result.Reverse().ToArray();
-        }
 
+        }
+        
         // Get perceptions outputs from prevoius layer
-        private double[] getPerceptronsOutputs(int layer_id)
+        protected double[] getPerceptronsOutputs(int layer_id)
         {
             double[] outputs = new double[neurons_per_layer[layer_id]];
             int p_index = 0;

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D2DF298-B476-4B69-A747-16D4E8E5241C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Agent</RootNamespace>
-    <AssemblyName>Agent</AssemblyName>
+    <ProjectGuid>{21573FF8-4D66-4590-8CC4-477B87E10881}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeneticAlgorithm</RootNamespace>
+    <AssemblyName>GeneticAlgorithm</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Agent.Agent_BACKPROPAGATION</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,21 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agent.cs" />
+    <Compile Include="GeneticController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Backpropagation\Backpropagation.csproj">
-      <Project>{5bc3488a-e18b-427d-88df-e5831b2ce6ba}</Project>
-      <Name>Backpropagation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GeneticAlgorithm + NeuralNetwork\GeneticAlgorithm.csproj">
-      <Project>{21573ff8-4d66-4590-8cc4-477b87e10881}</Project>
-      <Name>GeneticAlgorithm</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NeuralNetwork\NeuralNetwork.csproj">
       <Project>{c15cf100-c3c5-4f46-90ab-4416b6d49c17}</Project>
       <Name>NeuralNetwork</Name>

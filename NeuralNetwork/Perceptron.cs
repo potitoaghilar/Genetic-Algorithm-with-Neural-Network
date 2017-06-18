@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace GeneticAlgorithm
+namespace NeuralNetwork
 {
     public class Perceptron
     {
 
-        private double[] weights;
-        private double bias, output;
+        protected double[] weights;
+        protected double bias, output;
 
         public Perceptron(sbyte[] weights, sbyte bias)
         {
@@ -26,6 +26,11 @@ namespace GeneticAlgorithm
         public double getOutput()
         {
             return output;
+        }
+
+        public double[] getWeights()
+        {
+            return weights;
         }
 
         // Dot product

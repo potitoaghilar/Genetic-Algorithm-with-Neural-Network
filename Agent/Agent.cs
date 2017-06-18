@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GeneticAlgorithm;
+using NeuralNetwork;
+using Backpropagation;
 
 namespace Agent
 {
@@ -19,13 +21,13 @@ namespace Agent
             int input_length = input_vals.Length, output_legth = 2;
             int[] hiddenNeurons = new int[] { 3, 3 };
 
-            sbyte[] genome = new sbyte[NeuroNetwork.calculateGenomeLength(input_length, hiddenNeurons, output_legth)];
+            sbyte[] genome = new sbyte[NeuralNetwork.NeuroNetwork.calculateGenomeLength(input_length, hiddenNeurons, output_legth)];
             for (int i = 0; i < 100; i++)
             {
                 for (int g = 0; g < genome.Length; g++)
                     genome[g] = (sbyte)random.Next(-128, 127);
 
-                NeuroNetwork nn = new NeuroNetwork(input_length, hiddenNeurons, output_legth, genome);
+                NeuralNetwork.NeuroNetwork nn = new NeuralNetwork.NeuroNetwork(input_length, hiddenNeurons, output_legth, genome);
                 Console.WriteLine(nn.elaborate(input_vals)[0]);
             }
 
@@ -67,6 +69,28 @@ namespace Agent
             }
             Console.ReadLine();
 
+        }
+
+    }
+    
+    public class Agent_BACKPROPAGATION
+    {
+
+        static Random random = new Random();
+
+        static void Main(String[] args)
+        {
+            double[] input = new double[] { 0, 1 }, target = new double[] { 1, 0 };
+
+            int input_length = input.Length, output_legth = target.Length;
+            int[] hiddenNeurons = new int[] { 3 };
+
+            sbyte[] genome = new sbyte[NeuralNetwork.NeuroNetwork.calculateGenomeLength(input_length, hiddenNeurons, output_legth)];
+            
+            
+            
+
+            Console.ReadLine();
         }
 
     }

@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticAlgorithm + NeuralNetwork", "GeneticAlgorithm + NeuralNetwork\GeneticAlgorithm + NeuralNetwork.csproj", "{21573FF8-4D66-4590-8CC4-477B87E10881}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticAlgorithm", "GeneticAlgorithm + NeuralNetwork\GeneticAlgorithm.csproj", "{21573FF8-4D66-4590-8CC4-477B87E10881}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agent", "Agent\Agent.csproj", "{5D2DF298-B476-4B69-A747-16D4E8E5241C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backpropagation", "Backpropagation\Backpropagation.csproj", "{5BC3488A-E18B-427D-88DF-E5831B2CE6BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetwork", "NeuralNetwork\NeuralNetwork.csproj", "{C15CF100-C3C5-4F46-90AB-4416B6D49C17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{5D2DF298-B476-4B69-A747-16D4E8E5241C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D2DF298-B476-4B69-A747-16D4E8E5241C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D2DF298-B476-4B69-A747-16D4E8E5241C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC3488A-E18B-427D-88DF-E5831B2CE6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC3488A-E18B-427D-88DF-E5831B2CE6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC3488A-E18B-427D-88DF-E5831B2CE6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC3488A-E18B-427D-88DF-E5831B2CE6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15CF100-C3C5-4F46-90AB-4416B6D49C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15CF100-C3C5-4F46-90AB-4416B6D49C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15CF100-C3C5-4F46-90AB-4416B6D49C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15CF100-C3C5-4F46-90AB-4416B6D49C17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

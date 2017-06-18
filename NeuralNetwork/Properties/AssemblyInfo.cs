@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Le informazioni generali relative a un assembly sono controllate dal seguente 
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
-[assembly: AssemblyTitle("GeneticAlgorithm")]
+[assembly: AssemblyTitle("NeuralNetwork")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GeneticAlgorithm")]
+[assembly: AssemblyProduct("NeuralNetwork")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Se il progetto viene esposto a COM, il GUID seguente verrà utilizzato come ID della libreria dei tipi
-[assembly: Guid("21573ff8-4d66-4590-8cc4-477b87e10881")]
+[assembly: Guid("c15cf100-c3c5-4f46-90ab-4416b6d49c17")]
 
 // Le informazioni sulla versione di un assembly sono costituite dai seguenti quattro valori:
 //
