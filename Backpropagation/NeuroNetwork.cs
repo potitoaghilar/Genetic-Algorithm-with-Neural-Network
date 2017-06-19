@@ -23,12 +23,16 @@ namespace Backpropagation
             perceptrons[index] = new Perceptron(weights, value);
         }
 
-        public void trainNetwork(double[] input, double[] target, int ages) {
+        public void trainNetwork(double[][] input_dataset, double[][] target_dataset, int ages) {
 
             for (int i = 0; i < ages; i++) {
-                elaborateWithErrors(input, target);
 
-                updateWeights(input);
+                for (int o = 0; o < input_dataset.Length; o++)
+                {
+                    elaborateWithErrors(input_dataset[o], target_dataset[o]);
+                    updateWeights(input_dataset[o]);
+                }
+
             }
 
         }

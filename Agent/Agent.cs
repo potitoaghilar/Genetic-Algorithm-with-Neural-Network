@@ -80,9 +80,21 @@ namespace Agent
 
         static void Main(String[] args)
         {
-            double[] input = new double[] { .7, .1 }, target = new double[] { .5, 1, 0 };
+            double[][] input = new double[][] {
 
-            int input_length = input.Length, output_length = target.Length;
+                // Input dataset
+                new double[] { 1, 1 },
+                new double[] { 0, 0 },
+
+            }, target = new double[][] {
+
+                // Correspondent target dataset
+                new double[] { 1, 1, 1 },
+                new double[] { 0, 0, 0 },
+
+            };
+
+            int input_length = input[0].Length, output_length = target[0].Length;
             int[] hiddenNeurons = new int[] { 3, 3 };
 
             sbyte[] genome = new sbyte[NeuralNetwork.NeuroNetwork.calculateGenomeLength(input_length, hiddenNeurons, output_length)];
@@ -93,9 +105,11 @@ namespace Agent
             Backpropagation.NeuroNetwork net = new Backpropagation.NeuroNetwork(input_length, hiddenNeurons, output_length, genome);
             net.trainNetwork(input, target, 100000);
 
-            Console.WriteLine(net.elaborate(input)[0] + "   " + net.elaborate(input)[1] + "   " + net.elaborate(input)[2]);
-
+            // Test
+            double[] output = net.elaborate(new double[] { .2, .2 });
+            Console.WriteLine(output[0] + "   " + output[1] + "   " + output[2]);
             Console.ReadLine();
+
         }
 
     }
